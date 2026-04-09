@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Lightyear Systems desenvolve sites, reestrutura plataformas e cria sistemas sob medida para impulsionar empresas."
+    >
+    <title>Lightyear Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand-tools">
+            <a href="#inicio" class="logo" aria-label="Lightyear Systems">
+                <img src="logopng branca.png" alt="Logo Lightyear" class="logo-brand-image">
+                <span class="logo-text-wrap">
+                    <span class="logo-text">LIGHTYEAR SYSTEMS</span>
+                    <span class="logo-subtext">EspaÃ§o para crescer</span>
+                </span>
+            </a>
+        </div>
+
+        <div class="header-actions">
+            <nav aria-label="Navegacao principal">
+                <ul>
+                    <li><a href="#servicos">Servi&ccedil;os</a></li>
+                    <li><a href="#sobre">Equipe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Alternar entre modo escuro e claro"
+                aria-pressed="false"
+            >
+                <span class="theme-toggle-icons" aria-hidden="true">
+                    <span class="theme-icon theme-icon-star">
+                        <img src="estrela.png" alt="" class="theme-icon-image">
+                    </span>
+                    <span class="theme-icon theme-icon-moon">
+                        <img src="lua.png" alt="" class="theme-icon-image">
+                    </span>
+                </span>
+                <span class="theme-toggle-thumb" aria-hidden="true"></span>
+                <span class="theme-toggle-text">Modo claro</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div id="stars"></div>
+            <canvas class="hero-particles" aria-hidden="true"></canvas>
+            <div class="hero-ribbon hero-ribbon-top" aria-hidden="true"></div>
+            <div class="hero-ribbon hero-ribbon-bottom" aria-hidden="true"></div>
+            <div class="hero-aura" aria-hidden="true"></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="hero-content reveal">
+                <h1 class="main-title">Espa&ccedil;o <br> para crescer</h1>
+                <p class="subtitle">
+                    Projetos digitais que unem presen&ccedil;a, estrutura e performance
+                    para colocar sua empresa em um novo n&iacute;vel.
+                </p>
+            </div>
+
+            <aside class="hero-panel reveal">
+                <p class="panel-kicker">Vis&atilde;o da Lightyear</p>
+                <h2>Design, clareza e estrutura na mesma dire&ccedil;&atilde;o.</h2>
+
+                <div class="panel-line">
+                    <span>01</span>
+                    <p>Presen&ccedil;a digital clara e profissional.</p>
+                </div>
+                <div class="panel-line">
+                    <span>02</span>
+                    <p>Estrutura pensada para evoluir com o neg&oacute;cio.</p>
+                </div>
+                <div class="panel-line">
+                    <span>03</span>
+                    <p>Solu&ccedil;&otilde;es que transformam ideia em opera&ccedil;&atilde;o.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section id="servicos" class="section section-light services-section">
+            <div class="section-heading reveal">
+                <p class="section-tag">Nossos Servi&ccedil;os</p>
+                <h2>Seis frentes para levar a sua empresa mais longe</h2>
+                <p>
+                    Mantivemos o conceito central do site e expandimos a apresenta&ccedil;&atilde;o
+                    para transmitir mais maturidade, clareza e valor.
+                </p>
+            </div>
+
+            <div class="services-shell reveal">
+                <div class="services-drag-hint" id="servicesHint" aria-hidden="true">
+                    Arraste para o lado
+                </div>
+
+                <div class="cards services-track">
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">01</span>
+                        </div>
+                        <h3>Cria&ccedil;&atilde;o de Sites</h3>
+                        <div class="service-media service-media-sites"></div>
+                        <p>
+                            Desenvolvimento de sites modernos, responsivos e alinhados
+                            &agrave; identidade da sua marca.
+                        </p>
+                    </article>
+
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">02</span>
+                        </div>
+                        <h3>Reestrutura&ccedil;&atilde;o</h3>
+                        <div class="service-media service-media-upgrade"></div>
+                        <p>
+                            Reformula&ccedil;&atilde;o de p&aacute;ginas antigas com mais desempenho,
+                            organiza&ccedil;&atilde;o visual e melhor experi&ecirc;ncia.
+                        </p>
+                    </article>
+
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">03</span>
+                        </div>
+                        <h3>Sistemas &Uacute;nicos</h3>
+                        <div class="service-media service-media-systems"></div>
+                        <p>
+                            Solu&ccedil;&otilde;es personalizadas para automatizar processos e apoiar
+                            o crescimento real do neg&oacute;cio.
+                        </p>
+                    </article>
+
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">04</span>
+                        </div>
+                        <h3>Landing Pages</h3>
+                        <div class="service-media service-media-landing"></div>
+                        <p>
+                            P&aacute;ginas focadas em convers&atilde;o para campanhas,
+                            lan&ccedil;amentos e capta&ccedil;&atilde;o de leads.
+                        </p>
+                    </article>
+
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">05</span>
+                        </div>
+                        <h3>Identidade Visual</h3>
+                        <div class="service-media service-media-brand"></div>
+                        <p>
+                            Estrutura visual para marcas que precisam parecer mais
+                            profissionais, coerentes e memor&aacute;veis.
+                        </p>
+                    </article>
+
+                    <article class="card service-card">
+                        <div class="card-topline">
+                            <span class="card-index">06</span>
+                        </div>
+                        <h3>Automa&ccedil;&atilde;o</h3>
+                        <div class="service-media service-media-automation"></div>
+                        <p>
+                            Fluxos, formul&aacute;rios e integra&ccedil;&otilde;es para reduzir
+                            tarefas manuais e organizar melhor a opera&ccedil;&atilde;o.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section section-dark team-section">
+            <div class="about-grid">
+                <div class="about-copy reveal">
+                    <p class="section-tag">Quem n&oacute;s somos</p>
+                    <h2>Uma equipe com vis&atilde;o, execu&ccedil;&atilde;o e identidade pr&oacute;pria</h2>
+                    <p>
+                        A Lightyear Systems combina criatividade, t&eacute;cnica e planejamento
+                        para construir projetos com est&eacute;tica forte e base funcional s&oacute;lida.
+                    </p>
+                    <p>
+                        Nosso foco &eacute; transformar ideias em solu&ccedil;&otilde;es digitais com
+                        presen&ccedil;a visual marcante e utilidade pr&aacute;tica.
+                    </p>
+                </div>
+
+                <div class="about-card reveal">
+                    <span class="about-highlight">Lightyear Systems</span>
+                    <img src="grupo.png" alt="Equipe Lightyear Systems" class="about-card-image">
+                </div>
+            </div>
+
+            <div class="team">
+                <article class="member reveal">
+                    <img src="bernardo.png" alt="Bernardo Magalh&atilde;es">
+                    <h3>Bernardo Magalh&atilde;es</h3>
+                </article>
+
+                <article class="member reveal">
+                    <img src="clarice.png" alt="Clarice Chaves">
+                    <h3>Clarice Chaves</h3>
+                </article>
+
+                <article class="member reveal">
+                    <img src="daniel.png" alt="Daniel Alves">
+                    <h3>Daniel Alves</h3>
+                </article>
+
+                <article class="member reveal">
+                    <img src="jpnobrega.png" alt="Jo&atilde;o Pedro N&oacute;brega">
+                    <h3>Jo&atilde;o Pedro N&oacute;brega</h3>
+                </article>
+
+                <article class="member reveal">
+                    <img src="kauan.png" alt="Kauan Nascimento">
+                    <h3>Kauan Nascimento</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="section section-light contact-section">
+            <div class="contact-box reveal">
+                <p class="section-tag">Contato</p>
+                <h2>Vamos construir algo que represente a sua empresa</h2>
+                <p>
+                    Entre em contato para apresentar sua ideia, tirar d&uacute;vidas ou
+                    iniciar um projeto com a Lightyear Systems.
+                </p>
+
+                <div class="contact-actions">
+                    <button type="button" class="contact-link contact-toggle" id="contactToggle" aria-expanded="false" aria-controls="contactFormWrap">
+                        Abrir formul&aacute;rio
+                    </button>
+                    <a href="mailto:lightyearsystemscontato@gmail.com" class="contact-email-link">
+                        lightyearsystemscontato@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-form-wrap" id="contactFormWrap" hidden>
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="contact-form-grid">
+                            <label class="contact-field">
+                                <span>Nome</span>
+                                <input type="text" name="nome" placeholder="Seu nome" required>
+                            </label>
+
+                            <label class="contact-field">
+                                <span>E-mail</span>
+                                <input type="email" name="email" placeholder="voce@empresa.com" required>
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Empresa</span>
+                                <input type="text" name="empresa" placeholder="Nome da empresa">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Telefone</span>
+                                <input type="tel" name="telefone" placeholder="(00) 00000-0000">
+                            </label>
+                        </div>
+
+                        <label class="contact-field contact-field-full">
+                            <span>Mensagem</span>
+                            <textarea name="mensagem" rows="5" placeholder="Conte um pouco sobre o projeto ou a ideia que voc&ecirc; quer desenvolver." required></textarea>
+                        </label>
+
+                                                <input type="hidden" name="_subject" value="Novo contato pelo site Lightyear Systems">
+
+                        <div class="contact-form-actions">
+                            <button type="submit" class="contact-submit">Enviar contato</button>
+                            <p class="contact-form-note" id="contactFormNote">Preencha os campos e envie sua mensagem direto por aqui.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
