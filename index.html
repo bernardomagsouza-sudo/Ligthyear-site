@@ -116,12 +116,12 @@
                             <span class="card-index">01</span>
                         </div>
                         <div class="service-feature">
-                            <h3>Horta Interativa</h3>
-                            <img src="horta-interativa.jpg" alt="Projeto Horta Interativa" class="service-photo service-photo-large">
+                            <h3>Biblioteca Escolar</h3>
+                            <img src="biblioteca-escolar.png" alt="Projeto Biblioteca Escolar Emerson Teixeira" class="service-photo service-photo-large service-photo-top">
                             <p>
-                                Projeto sustent&aacute;vel inspirado nos ODS, em que o usu&aacute;rio
-                                clica nos alimentos da horta para descobrir receitas que utilizam
-                                esses ingredientes e incentivam o consumo consciente.
+                                Site criado para a Biblioteca Escolar Emerson Teixeira, com foco em
+                                engajar a comunidade escolar, divulgar o acervo e aproximar estudantes
+                                da leitura, conectando educa&ccedil;&atilde;o e acesso ao conhecimento ao ODS 4.
                             </p>
                         </div>
                     </article>
@@ -129,21 +129,6 @@
                     <article class="card service-card service-card-combo">
                         <div class="card-topline">
                             <span class="card-index">02</span>
-                        </div>
-                        <div class="service-feature">
-                            <h3>Ponto de coleta de lixo eletr&ocirc;nico</h3>
-                            <img src="lixo-eletronico.jpg" alt="Projeto Ponto de coleta de lixo eletr&ocirc;nico" class="service-photo service-photo-large service-photo-top">
-                            <p>
-                                Site sobre pontos de coleta de lixo eletr&ocirc;nico na Zona Oeste
-                                do Rio de Janeiro, conectado ao ODS 9 e voltado para tecnologia,
-                                infraestrutura e descarte respons&aacute;vel.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="card service-card service-card-combo">
-                        <div class="card-topline">
-                            <span class="card-index">03</span>
                         </div>
                         <div class="service-feature">
                             <h3>Alimenta&ccedil;&atilde;o Saud&aacute;vel nas escolas</h3>
@@ -160,15 +145,30 @@
 
                     <article class="card service-card service-card-combo">
                         <div class="card-topline">
+                            <span class="card-index">03</span>
+                        </div>
+                        <div class="service-feature">
+                            <h3>Ponto de coleta de lixo eletr&ocirc;nico</h3>
+                            <img src="lixo-eletronico.jpg" alt="Projeto Ponto de coleta de lixo eletr&ocirc;nico" class="service-photo service-photo-large service-photo-top">
+                            <p>
+                                Site sobre pontos de coleta de lixo eletr&ocirc;nico na Zona Oeste
+                                do Rio de Janeiro, conectado ao ODS 9 e voltado para tecnologia,
+                                infraestrutura e descarte respons&aacute;vel.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card service-card service-card-combo">
+                        <div class="card-topline">
                             <span class="card-index">04</span>
                         </div>
                         <div class="service-feature">
-                            <h3>Biblioteca Escolar</h3>
-                            <img src="biblioteca-escolar.png" alt="Projeto Biblioteca Escolar Emerson Teixeira" class="service-photo service-photo-large service-photo-top">
+                            <h3>Horta Interativa</h3>
+                            <img src="horta-interativa.jpg" alt="Projeto Horta Interativa" class="service-photo service-photo-large">
                             <p>
-                                Site criado para a Biblioteca Escolar Emerson Teixeira, com foco em
-                                engajar a comunidade escolar, divulgar o acervo e aproximar estudantes
-                                da leitura, conectando educa&ccedil;&atilde;o e acesso ao conhecimento ao ODS 4.
+                                Projeto sustent&aacute;vel inspirado nos ODS, em que o usu&aacute;rio
+                                clica nos alimentos da horta para descobrir receitas que utilizam
+                                esses ingredientes e incentivam o consumo consciente.
                             </p>
                         </div>
                     </article>
@@ -247,29 +247,29 @@
                     <form class="contact-form" id="contactForm" novalidate>
                         <div class="contact-form-grid">
                             <label class="contact-field">
-                                <span>Nome</span>
-                                <input type="text" name="nome" placeholder="Seu nome" required>
+                                <span>Nome *</span>
+                                <input type="text" name="nome" placeholder="Seu nome" required aria-required="true">
                             </label>
 
                             <label class="contact-field">
-                                <span>E-mail</span>
-                                <input type="email" name="email" placeholder="voce@empresa.com" required>
+                                <span>E-mail *</span>
+                                <input type="email" name="email" placeholder="voce@empresa.com" required aria-required="true">
                             </label>
 
                             <label class="contact-field">
-                                <span>Empresa</span>
-                                <input type="text" name="empresa" placeholder="Nome da empresa" required>
+                                <span>Empresa *</span>
+                                <input type="text" name="empresa" placeholder="Nome da empresa" required aria-required="true">
                             </label>
 
                             <label class="contact-field">
-                                <span>Telefone</span>
-                                <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+                                <span>Telefone *</span>
+                                <input type="tel" name="telefone" placeholder="(00) 00000-0000" required aria-required="true">
                             </label>
                         </div>
 
                         <label class="contact-field contact-field-full">
-                            <span>Mensagem</span>
-                            <textarea name="mensagem" rows="5" placeholder="Conte um pouco sobre o projeto ou a ideia que voc&ecirc; quer desenvolver." required></textarea>
+                            <span>Mensagem *</span>
+                            <textarea name="mensagem" rows="5" placeholder="Conte um pouco sobre o projeto ou a ideia que voc&ecirc; quer desenvolver." required aria-required="true"></textarea>
                         </label>
 
                                                 <input type="hidden" name="_subject" value="Novo contato pelo site Lightyear Systems">
