@@ -84,6 +84,17 @@ if (contactToggle && contactFormWrap && contactForm) {
     contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+
+            if (contactFormNote) {
+                contactFormNote.textContent = "Preencha todos os campos obrigatorios antes de enviar.";
+                contactFormNote.classList.remove("is-success");
+            }
+
+            return;
+        }
+
         const data = new FormData(contactForm);
         const submitButton = contactForm.querySelector(".contact-submit");
 
@@ -351,7 +362,6 @@ if (hero && particleCanvas) {
     resizeCanvas();
     animate();
 }
-
 
 
 
