@@ -823,6 +823,13 @@ body[data-theme="light"] .section-dark {
         #e2eef3;
 }
 
+body[data-theme="light"] .team-section {
+    background:
+        radial-gradient(circle at top right, rgba(95, 125, 203, 0.16), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(152, 213, 228, 0.2), transparent 24%),
+        linear-gradient(180deg, #e2eef3 0%, #e2eef3 76%, #edf4f7 100%);
+}
+
 body[data-theme="light"] .hero-panel,
 body[data-theme="light"] .card,
 body[data-theme="light"] .about-card,
@@ -930,8 +937,20 @@ body[data-theme="light"] .member:hover {
     background: linear-gradient(180deg, rgba(235, 244, 248, 0.98), rgba(219, 232, 239, 0.96));
 }
 
+body[data-theme="light"] .member:hover,
+body[data-theme="light"] .member:focus-visible {
+    border-color: rgba(83, 116, 173, 0.3);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 24px 56px rgba(73, 102, 146, 0.18);
+}
+
 body[data-theme="light"] .member img {
     box-shadow: 0 0 0 10px rgba(95, 125, 203, 0.08);
+}
+
+body[data-theme="light"] .member-role {
+    color: #4f6d91;
 }
 
 body[data-theme="light"] .contact-box {
@@ -1297,6 +1316,11 @@ body[data-theme="light"] .services-drag-hint {
 
 .team-section {
     position: relative;
+    padding-bottom: 46px;
+    background:
+        radial-gradient(circle at top right, rgba(57, 86, 150, 0.16), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(93, 109, 146, 0.08), transparent 24%),
+        linear-gradient(180deg, #08101f 0%, #08101f 76%, #05070f 100%);
 }
 
 .about-grid {
@@ -1349,14 +1373,18 @@ body[data-theme="light"] .services-drag-hint {
 }
 
 .team {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
     gap: 24px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 22px;
+    align-items: flex-start;
 }
 
 .member {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 300px;
     padding: 28px 20px;
     border-radius: 24px;
     border: 1px solid rgba(176, 191, 255, 0.08);
@@ -1364,14 +1392,24 @@ body[data-theme="light"] .services-drag-hint {
         linear-gradient(180deg, rgba(94, 110, 140, 0.14), rgba(11, 17, 34, 0) 24%),
         linear-gradient(180deg, rgba(11, 17, 34, 0.72), rgba(7, 11, 24, 0.84));
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    transition: transform 0.38s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    overflow: hidden;
 }
 
-.member:hover {
-    transform: translateY(-8px);
+.member:hover,
+.member:focus-visible {
+    transform: translateY(-26px) scale(1.08);
     border-color: var(--line);
     background: linear-gradient(180deg, rgba(16, 23, 46, 0.82), rgba(10, 16, 34, 0.88));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.11),
+        0 24px 56px rgba(0, 0, 0, 0.32);
+}
+
+.member:focus-visible {
+    outline: 2px solid rgba(229, 235, 255, 0.72);
+    outline-offset: 4px;
 }
 
 .member img {
@@ -1382,6 +1420,7 @@ body[data-theme="light"] .services-drag-hint {
     border-radius: 999px;
     border: 2px solid rgba(179, 194, 255, 0.24);
     box-shadow: 0 0 0 10px rgba(100, 124, 255, 0.06);
+    transition: transform 0.34s ease, border-color 0.34s ease, box-shadow 0.34s ease, filter 0.34s ease;
 }
 
 .member h3 {
@@ -1390,8 +1429,60 @@ body[data-theme="light"] .services-drag-hint {
     line-height: 1.5;
 }
 
+.member::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 28%, rgba(229, 235, 255, 0.15), transparent 30%),
+        linear-gradient(135deg, rgba(90, 116, 190, 0.16), transparent 48%);
+    opacity: 0;
+    transition: opacity 0.34s ease;
+    pointer-events: none;
+}
+
+.member:hover::before,
+.member:focus-visible::before {
+    opacity: 1;
+}
+
+.member:hover img,
+.member:focus-visible img {
+    transform: scale(1.22);
+    border-color: rgba(229, 235, 255, 0.58);
+    box-shadow:
+        0 0 0 12px rgba(100, 124, 255, 0.09),
+        0 18px 36px rgba(0, 0, 0, 0.28);
+    filter: saturate(1.08) contrast(1.03);
+}
+
+.member-role {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 26px;
+    max-width: 220px;
+    margin: 0 auto;
+    color: #c4d2f2;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.3;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.member:hover .member-role,
+.member:focus-visible .member-role {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .contact-section {
-    padding-bottom: 120px;
+    padding-top: 52px;
+    padding-bottom: 96px;
 }
 
 .contact-box {
@@ -1580,6 +1671,12 @@ body[data-theme="light"] .services-drag-hint {
     filter: blur(0);
 }
 
+.member.reveal.visible:hover,
+.member.reveal.visible:focus-visible {
+    transform: translateY(-26px) scale(1.08);
+    z-index: 2;
+}
+
 @keyframes moveStars {
     from {
         transform: translateY(0);
@@ -1603,8 +1700,7 @@ body[data-theme="light"] .services-drag-hint {
 
 @media (max-width: 1100px) {
     .hero,
-    .about-grid,
-    .team {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1619,7 +1715,21 @@ body[data-theme="light"] .services-drag-hint {
     }
 
     .team {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        flex-wrap: wrap;
+    }
+
+    .member {
+        flex: 1 1 calc(33.333% - 18px);
+    }
+
+    .member:hover,
+    .member:focus-visible {
+        transform: translateY(-18px) scale(1.04);
+    }
+
+    .member.reveal.visible:hover,
+    .member.reveal.visible:focus-visible {
+        transform: translateY(-18px) scale(1.04);
     }
 
     .service-card {
@@ -1700,7 +1810,11 @@ body[data-theme="light"] .services-drag-hint {
     }
 
     .team {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        flex-wrap: wrap;
+    }
+
+    .member {
+        flex-basis: calc(50% - 12px);
     }
 
     .about-bridge {
@@ -1752,7 +1866,11 @@ body[data-theme="light"] .services-drag-hint {
     }
 
     .team {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .member {
+        flex-basis: auto;
     }
 
     .service-card-combo {
