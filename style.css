@@ -1886,3 +1886,191 @@ body[data-theme="light"] .services-drag-hint {
         height: 144px;
     }
 }
+
+/* === Hero centered layout === */
+.hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    padding-top: 200px;
+    padding-bottom: 120px;
+}
+
+.hero-content-centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 960px;
+}
+
+.hero-content-centered .subtitle {
+    text-align: center;
+    max-width: 580px;
+    margin-top: 28px;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.main-title-top {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(3rem, 7.5vw, 5.8rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.main-title-bottom {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(4.8rem, 13vw, 10rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+/* === Service card hover effect === */
+.service-img-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+    flex-shrink: 0;
+}
+
+.service-img-wrap .service-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    border-radius: 0;
+}
+
+.service-card:hover .service-img-wrap .service-photo {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.service-accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #335dbe, #8ba4e8, #335dbe);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-accent-bar {
+    transform: scaleX(1);
+}
+
+/* Texto oculto por padrão, expande para baixo no hover */
+.service-reveal-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0 !important;
+    transition:
+        max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s ease 0.12s,
+        margin-top 0.4s ease;
+}
+
+.service-card:hover .service-reveal-text {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 16px !important;
+}
+
+/* Card: flex column, SEM overflow hidden para expandir para baixo */
+.service-card.service-card-combo {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: visible;
+    border-radius: 20px;
+}
+
+/* Garantir que a imagem respeite o border-radius do card */
+.service-card.service-card-combo .service-img-wrap {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+/* Área de texto do card */
+.service-card.service-card-combo .service-feature {
+    padding: 22px 24px 26px;
+    border-radius: 0 0 20px 20px;
+    background: inherit;
+}
+
+.service-card.service-card-combo .card-topline {
+    margin-bottom: 10px;
+}
+
+/* Transição suave no card inteiro */
+.service-card {
+    position: relative;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(140, 170, 255, 0.45);
+    box-shadow:
+        0 0 0 1px rgba(140, 170, 255, 0.18),
+        0 0 40px 6px rgba(80, 120, 240, 0.14),
+        0 24px 60px rgba(0, 0, 0, 0.36);
+}
+
+body[data-theme="light"] .service-card:hover {
+    border-color: rgba(95, 125, 203, 0.38);
+    box-shadow:
+        0 0 0 1px rgba(95, 125, 203, 0.2),
+        0 0 40px 6px rgba(95, 125, 203, 0.12),
+        0 24px 60px rgba(73, 102, 146, 0.18);
+}
+
+body[data-theme="light"] .service-accent-bar {
+    background: linear-gradient(90deg, #5b7ecc, #a8bef0, #5b7ecc);
+    background-size: 200% 100%;
+}
+
+/* === Card inativo: sem espaço extra abaixo do título === */
+.service-card.service-card-combo .service-feature {
+    padding-bottom: 22px;
+}
+
+.service-card.service-card-combo .service-feature h3 {
+    margin-bottom: 0;
+}
+
+.card.service-card {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* === Corrige min-height herdado do .card === */
+.service-card.service-card-combo {
+    min-height: 0 !important;
+}

@@ -365,3 +365,52 @@ if (hero && particleCanvas) {
 
 
 
+
+// === Services autoplay scroll ===
+if (servicesTrack) {
+    let autoScrollSpeed = 0.6;
+    let userPaused = false;
+    let resumeTimer = null;
+    let rewinding = false;
+    let rewindStart = null;
+    let rewindFrom = 0;
+    const rewindDuration = 1200; // ms
+
+    const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const autoScroll = (timestamp) => {
+        if (!userPaused) {
+            const maxScroll = servicesTrack.scrollWidth - servicesTrack.clientWidth;
+
+            if (rewinding) {
+                if (!rewindStart) rewindStart = timestamp;
+                const elapsed = timestamp - rewindStart;
+                const progress = Math.min(elapsed / rewindDuration, 1);
+                servicesTrack.scrollLeft = rewindFrom * (1 - easeInOutCubic(progress));
+                if (progress >= 1) {
+                    rewinding = false;
+                    rewindStart = null;
+                }
+            } else if (servicesTrack.scrollLeft >= maxScroll) {
+                rewinding = true;
+                rewindFrom = servicesTrack.scrollLeft;
+                rewindStart = null;
+            } else {
+                servicesTrack.scrollLeft += autoScrollSpeed;
+            }
+        }
+        requestAnimationFrame(autoScroll);
+    };
+
+    const pauseAutoScroll = () => {
+        userPaused = true;
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => { userPaused = false; }, 3000);
+    };
+
+    servicesTrack.addEventListener("pointerenter", pauseAutoScroll);
+    servicesTrack.addEventListener("pointerdown", pauseAutoScroll);
+    servicesTrack.addEventListener("wheel", pauseAutoScroll, { passive: true });
+
+    requestAnimationFrame(autoScroll);
+}
