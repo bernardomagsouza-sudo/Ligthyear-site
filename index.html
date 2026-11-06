@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- ESTRUTURA DA PÁGINA (index.html) -->
+<!-- Ordem: HEAD (configurações) > HEADER (menu) > MAIN (hero, serviços, equipe, contato) > SCRIPT. -->
+<!-- As classes (class="...") ligam cada bloco ao style.css; os ids (id="...") ligam ao script.js. -->
+
+<!-- HEAD: informações técnicas que não aparecem na página (codificação, SEO, ícone, fontes e CSS). -->
+<head>
+    <!-- Codificação UTF-8: faz acentos e caracteres especiais aparecerem corretamente. -->
+    <meta charset="UTF-8">
+    <!-- Faz o site se adaptar a celulares (responsividade). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descrição que aparece nos resultados do Google (SEO). -->
+    <meta
+        name="description"
+        content="Lightyear Systems desenvolve sites, reestrutura plataformas e cria sistemas sob medida para impulsionar empresas."
+    >
+    <!-- Título exibido na aba do navegador. -->
+    <title>Lightyear Systems</title>
+    <!-- FAVICON: ícone da aba do navegador (logo da Lightyear). -->
+    <!-- favicon.ico = padrão; favicon-32/16.png = abas modernas; apple-touch-icon.png = atalho no iPhone/iPad. -->
+    <!-- theme-color = cor da barra do navegador no celular. -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#08101f">
+    <!-- FONTES: o preconnect acelera o carregamento das fontes Poppins (títulos) e Instrument Sans (textos) do Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+    <!-- Liga o arquivo de estilos (cores, tamanhos, animações): style.css. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- BODY: tudo o que aparece na tela. O tema claro/escuro é aplicado aqui (data-theme). -->
+<body>
+
+    <!-- ===================================================== -->
+    <!-- CABEÇALHO FIXO (menu no topo) -->
+    <!-- Contém: logo + nome da empresa (esquerda) e menu + botão de tema (direita). -->
+    <!-- ==================================================== -->
+    <header class="site-header">
+        <!-- Lado esquerdo: logo + texto "LIGHTYEAR SYSTEMS / Espaço para crescer". Clique leva ao início (#inicio). -->
+        <div class="brand-tools">
+            <a href="#inicio" class="logo" aria-label="Lightyear Systems">
+                <img src="logopng branca.png" alt="Logo Lightyear" class="logo-brand-image">
+                <span class="logo-text-wrap">
+                    <span class="logo-text">LIGHTYEAR SYSTEMS</span>
+                    <span class="logo-subtext">Espaço para crescer</span>
+                </span>
+            </a>
+        </div>
+
+        <!-- Lado direito: menu de navegação + botão de alternar tema. -->
+        <div class="header-actions">
+            <!-- MENU: cada link rola até a seção cujo id é igual ao do href (#servicos, #sobre, #contato). -->
+            <nav aria-label="Navegacao principal">
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Equipe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- BOTÃO DE TEMA (claro/escuro): o clique é tratado no script.js (id=themeToggle). Estrela = modo escuro, lua = modo claro. -->
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Alternar entre modo escuro e claro"
+                aria-pressed="false"
+            >
+                <span class="theme-toggle-icons" aria-hidden="true">
+                    <span class="theme-icon theme-icon-star">
+                        <img src="estrela.png" alt="" class="theme-icon-image">
+                    </span>
+                    <span class="theme-icon theme-icon-moon">
+                        <img src="lua.png" alt="" class="theme-icon-image">
+                    </span>
+                </span>
+                <span class="theme-toggle-thumb" aria-hidden="true"></span>
+                <span class="theme-toggle-text">Modo claro</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL da página, dividido em 4 seções. -->
+    <main>
+
+        <!-- ===================================================== -->
+        <!-- SEÇÃO 1: HERO (primeira tela, id=inicio) -->
+        <!-- Fundo animado (estrelas, partículas, faixas de luz, órbitas) + título e subtítulo. -->
+        <!-- ==================================================== -->
+        <section id="inicio" class="hero">
+            <!-- Camadas decorativas do fundo (estrelas, canvas de partículas animado pelo script.js, faixas de luz, brilho e órbitas). -->
+            <div id="stars"></div>
+            <canvas class="hero-particles" aria-hidden="true"></canvas>
+            <div class="hero-ribbon hero-ribbon-top" aria-hidden="true"></div>
+            <div class="hero-ribbon hero-ribbon-bottom" aria-hidden="true"></div>
+            <div class="hero-aura" aria-hidden="true"></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <!-- Texto central do hero. A classe reveal faz o bloco aparecer com animação ao entrar na tela. -->
+            <div class="hero-content hero-content-centered reveal">
+                <h1 class="main-title">
+                    <span class="main-title-top">Espaço <span class="main-title-para">para</span></span>
+                    <span class="main-title-bottom">crescer</span>
+                </h1>
+                <p class="subtitle">
+                    Projetos digitais que unem presença, estrutura e performance
+                    para colocar sua empresa em um novo nível.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- SEÇÃO 2: SERVIÇOS / PROJETOS (id=servicos) -->
+        <!-- Carrossel horizontal com 4 projetos. No hover, a foto ganha cor e o texto expande. -->
+        <!-- ==================================================== -->
+        <section id="servicos" class="section section-light services-section">
+            <!-- Título e texto de introdução da seção. -->
+            <div class="section-heading reveal">
+                <p class="section-tag">Nossos Servicos</p>
+                <h2>Projetos digitais criados para gerar impacto real</h2>
+                <p>
+                    Unimos tecnologia, criatividade e propósito para desenvolver experiências
+                    conectadas aos ODS e às necessidades da comunidade.
+                </p>
+            </div>
+
+            <!-- Moldura do carrossel (ocupa a largura toda da tela). -->
+            <div class="services-shell reveal">
+                <!-- Dica "Arraste para o lado": aparece depois de alguns segundos (controlada pelo script.js). -->
+                <div class="services-drag-hint" id="servicesHint" aria-hidden="true">
+                    Arraste para o lado
+                </div>
+
+                <!-- TRILHO do carrossel: os cards ficam lado a lado e podem ser arrastados ou rolam sozinhos. -->
+                <div class="cards services-track">
+                    <!-- CARD 01: Biblioteca Escolar (ODS 4). Estrutura de todos os cards: imagem + barra de destaque + número + título + texto (o texto só aparece no hover). -->
+                    <article class="card service-card service-card-combo">
+                        <div class="service-img-wrap">
+                            <img src="biblioteca-escolar.png" alt="Projeto Biblioteca Escolar Emerson Teixeira" class="service-photo service-photo-large service-photo-top">
+                            <div class="service-accent-bar"></div>
+                        </div>
+                        <div class="service-feature">
+                            <div class="card-topline">
+                                <span class="card-index">01</span>
+                            </div>
+                            <h3>Biblioteca Escolar</h3>
+                            <p class="service-reveal-text">
+                                Site criado para a Biblioteca Escolar Emerson Teixeira, com foco em
+                                engajar a comunidade escolar, divulgar o acervo e aproximar estudantes
+                                da leitura, conectando educação e acesso ao conhecimento ao ODS 4.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- CARD 02: Horta Interativa. -->
+                    <article class="card service-card service-card-combo">
+                        <div class="service-img-wrap">
+                            <img src="horta-interativa.jpg" alt="Projeto Horta Interativa" class="service-photo service-photo-large">
+                            <div class="service-accent-bar"></div>
+                        </div>
+                        <div class="service-feature">
+                            <div class="card-topline">
+                                <span class="card-index">02</span>
+                            </div>
+                            <h3>Horta Interativa</h3>
+                            <p class="service-reveal-text">
+                                Projeto sustentável inspirado nos ODS, em que o usuário
+                                clica nos alimentos da horta para descobrir receitas que utilizam
+                                esses ingredientes e incentivam o consumo consciente.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- CARD 03: Ponto de coleta de lixo eletrônico (ODS 9). -->
+                    <article class="card service-card service-card-combo">
+                        <div class="service-img-wrap">
+                            <img src="lixo-eletronico.jpg" alt="Projeto Ponto de coleta de lixo eletrônico" class="service-photo service-photo-large service-photo-top">
+                            <div class="service-accent-bar"></div>
+                        </div>
+                        <div class="service-feature">
+                            <div class="card-topline">
+                                <span class="card-index">03</span>
+                            </div>
+                            <h3>Ponto de coleta de lixo eletrônico</h3>
+                            <p class="service-reveal-text">
+                                Site sobre pontos de coleta de lixo eletrônico na Zona Oeste
+                                do Rio de Janeiro, conectado ao ODS 9 e voltado para tecnologia,
+                                infraestrutura e descartes responsáveis.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- CARD 04: Alimentação Saudável nas escolas (ODS 3). -->
+                    <article class="card service-card service-card-combo">
+                        <div class="service-img-wrap">
+                            <img src="alimentacao-saudavel.png" alt="Projeto Alimentação Saudável nas escolas" class="service-photo service-photo-large service-photo-top">
+                            <div class="service-accent-bar"></div>
+                        </div>
+                        <div class="service-feature">
+                            <div class="card-topline">
+                                <span class="card-index">04</span>
+                            </div>
+                            <h3>Alimentação Saudável nas escolas</h3>
+                            <p class="service-reveal-text">
+                                Site educativo ligado ao ODS 3, com cardápios saudáveis
+                                para diferentes horários do dia, ajudando estudantes a conhecer
+                                opções equilibradas para a rotina escolar.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- SEÇÃO 3: EQUIPE (id=sobre) -->
+        <!-- Texto institucional + foto do grupo + cartões dos integrantes. -->
+        <!-- ==================================================== -->
+        <section id="sobre" class="section section-dark team-section">
+            <!-- Grade de 2 colunas: texto "Quem nós somos" (esquerda) e foto da equipe (direita). -->
+            <div class="about-grid">
+                <!-- Texto institucional. -->
+                <div class="about-copy reveal">
+                    <p class="section-tag">Quem somos</p>
+                    <h2>Uma equipe com visão, execução e identidade própria.</h2>
+                    <p>
+                        <br> A Lightyear Systems combina criatividade, técnica e planejamento
+                        para construir projetos com estética forte e base funcional sólida.
+                    </p>
+                    <p>
+                        Nosso foco é transformar ideias em soluções digitais com
+                        presença visual marcante e utilidade prática.
+                    </p>
+                </div>
+
+                <!-- Cartão com a foto do grupo (grupo.png). -->
+                <div class="about-card reveal">
+                    <span class="about-highlight">Lightyear Systems</span>
+                    <img src="grupo.png" alt="Equipe Lightyear Systems" class="about-card-image">
+                </div>
+            </div>
+
+            <!-- CARTÕES DA EQUIPE: foto + nome. A função aparece no hover. -->
+            <!-- Para adicionar alguém, copie um bloco <article class="member reveal"> e troque foto, nome e função. -->
+            <div class="team">
+                <!-- Integrante 1: Bernardo (member-photo-top = foto alinhada pelo topo do rosto). -->
+                <article class="member member-featured reveal" tabindex="0" aria-label="Bernardo Magalhães, Designer UX/UI e Gerente de Marketing">
+                    <img src="bernardo.png" alt="Bernardo Magalhães" class="member-photo-top">
+                    <h3>Bernardo Magalhães</h3>
+                    <p class="member-role">Designer UX/UI<br>/ Gerente de Marketing</p>
+                </article>
+
+                <!-- Integrante 2: Clarice. -->
+                <article class="member reveal" tabindex="0" aria-label="Clarice Chaves, Desenvolvedora back-end e Analista de dados">
+                    <img src="clarice.png" alt="Clarice Chaves">
+                    <h3>Clarice Chaves</h3>
+                    <p class="member-role">Desenvolvedora back-end<br>/ Analista de dados</p>
+                </article>
+
+                <!-- Integrante 3: Daniel. -->
+                <article class="member reveal" tabindex="0" aria-label="Daniel Alves, Desenvolvedor Fullstack">
+                    <img src="daniel.png" alt="Daniel Alves" class="member-photo-top">
+                    <h3>Daniel Alves</h3>
+                    <p class="member-role">Desenvolvedor Fullstack</p>
+                </article>
+
+                <!-- Integrante 4: João Pedro. -->
+                <article class="member reveal" tabindex="0" aria-label="João Pedro Nóbrega, Analista de sistemas">
+                    <img src="jpnobrega.png" alt="João Pedro Nóbrega" class="member-photo-top">
+                    <h3>João Pedro Nóbrega</h3>
+                    <p class="member-role">Analista de sistemas</p>
+                </article>
+
+                <!-- Integrante 5: Kauan. -->
+                <article class="member reveal" tabindex="0" aria-label="Kauan Nascimento, Desenvolvedor Fullstack">
+                    <img src="kauan.jpg" alt="Kauan Nascimento">
+                    <h3>Kauan Nascimento</h3>
+                    <p class="member-role">Desenvolvedor Fullstack</p>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- SEÇÃO 4: CONTATO (id=contato) -->
+        <!-- Botão que abre o formulário + link de e-mail. O envio é feito pelo script.js (FormSubmit). -->
+        <!-- ==================================================== -->
+        <section id="contato" class="section section-light contact-section">
+            <!-- Caixa central da seção de contato. -->
+            <div class="contact-box reveal">
+                <p class="section-tag">Contato</p>
+                <h2>Vamos construir algo que represente a sua empresa</h2>
+                <p>
+                    Entre em contato para apresentar sua ideia, tirar dúvidas ou
+                    iniciar um projeto com a Lightyear Systems.
+                </p>
+
+                <!-- Botão "Abrir formulário" (id=contactToggle) e e-mail clicável (abre o programa de e-mail). -->
+                <div class="contact-actions">
+                    <button type="button" class="contact-link contact-toggle" id="contactToggle" aria-expanded="false" aria-controls="contactFormWrap">
+                        Abrir formulário
+                    </button>
+                    <a href="mailto:lightyearsystemscontato@gmail.com" class="contact-email-link">
+                        lightyearsystemscontato@gmail.com
+                    </a>
+                </div>
+
+                <!-- Área que abre/fecha (atributo hidden + classe is-open controlados pelo script.js). -->
+                <div class="contact-form-wrap" id="contactFormWrap" hidden>
+                    <!-- FORMULÁRIO (id=contactForm). novalidate = a validação é feita pelo script.js. Campos com * são obrigatórios (required). -->
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <!-- Campos em 2 colunas: nome, e-mail, empresa e telefone. O atributo name é o nome que chega no e-mail. -->
+                        <div class="contact-form-grid">
+                            <label class="contact-field">
+                                <span>Nome *</span>
+                                <input type="text" name="nome" placeholder="Seu nome" required aria-required="true">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>E-mail *</span>
+                                <input type="email" name="email" placeholder="voce@empresa.com" required aria-required="true">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Empresa</span>
+                                <input type="text" name="empresa" placeholder="Nome da empresa">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Telefone *</span>
+                                <input type="tel" name="telefone" placeholder="(00) 00000-0000" required aria-required="true">
+                            </label>
+                        </div>
+
+                        <!-- Campo de mensagem (largura total). -->
+                        <label class="contact-field contact-field-full">
+                            <span>Mensagem *</span>
+                            <textarea name="mensagem" rows="5" placeholder="Conte um pouco sobre o projeto ou a ideia que você quer desenvolver." required aria-required="true"></textarea>
+                        </label>
+
+                        <!-- CAMPOS OCULTOS (instruções para o FormSubmit, o visitante não vê): -->
+                        <!-- _subject = assunto do e-mail que a Lightyear recebe -->
+                        <input type="hidden" name="_subject" value="Novo contato pelo site Lightyear Systems">
+                        <!-- _template = formato do e-mail (table = tabela organizada) -->
+                        <input type="hidden" name="_template" value="table">
+                        <!-- _captcha = false desliga a página de captcha do FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- _honey = campo armadilha anti-spam: fica invisível; se um robô preencher, o FormSubmit descarta a mensagem -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <!-- Botão "Enviar contato" + mensagem de status (id=contactFormNote) que o script.js atualiza (enviando, sucesso ou erro). -->
+                        <div class="contact-form-actions">
+                            <button type="submit" class="contact-submit">Enviar contato</button>
+                            <p class="contact-form-note" id="contactFormNote">Preencha os campos e envie sua mensagem direto por aqui.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCRIPT: carrega o script.js no final da página (tema, animações, carrossel, partículas e envio do formulário). -->
+    <script src="script.js"></script>
+</body>
+</html>
